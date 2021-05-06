@@ -38,7 +38,11 @@ img{
     /* background-color: #6a7fb6; */
     background: linear-gradient(to right,#6a7fb6,#c394f8, #a85d98);    
     color: #fff;
-    height: 70px;
+    height: 80px;
+}
+
+.navbar .logo {
+    font-size: 3rem;
 }
 
 .navbar .flex{
@@ -53,6 +57,7 @@ img{
     margin: 0 10px;
     padding: 0 5px;
     color: #fff;
+    font-size: 17px;
 }
 
 .navbar a:hover{

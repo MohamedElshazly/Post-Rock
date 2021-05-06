@@ -111,6 +111,10 @@ img{
     padding: 150px;
 }
 
+.tabs img{
+    z-index: 9;
+}
+
 /* footer */
 .h1, p{
     color: #fff;
@@ -127,6 +131,41 @@ img{
 
 .footer nav a, h1{
     color: #fff;
+}
+
+
+/* Tablets and under */
+@media (max-width: 768px) {
+    .grid,
+    .showcase .grid, 
+    .tabs .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .showcase{
+        height: auto;
+    }
+
+    .showcase-text{
+        text-align: center;
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 500px) {
+    .navbar {
+        height: 110px;
+    }
+
+    .navbar .flex{
+        flex-direction: column;
+    }
+
+    .navbar ul{
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
 }
 
 
@@ -150,6 +189,11 @@ img{
 .btn-outline {
     background-color: transparent;
     border: 1px #fff solid;
+}
+
+.btn-primary{
+    background-color: #420d5f;
+    color: #fff;
 }
 
 .flex{

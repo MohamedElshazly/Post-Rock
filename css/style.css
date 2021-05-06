@@ -67,6 +67,25 @@ img{
     padding-top: 50px;
 }
 
+.showcase::before,
+.showcase::after {
+    content: '';
+    position: absolute;
+    height: 90px;
+    bottom: -70px;
+    right: 0;
+    left: 0;
+    background: #fff;
+    transform: skewY(-3deg);
+    -webkit-transform: skewY(-3deg);
+    -moz-transform: skewY(-3deg);
+    -ms-transform: skewY(-3deg);
+}
+
+.showcase img{
+    z-index: 9;
+}
+
 /* .showcase img{
     padding-top: 50px;
 } */

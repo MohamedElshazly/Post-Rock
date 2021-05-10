@@ -173,6 +173,10 @@ img{
     cursor: pointer;
 }
 
+.bands a{
+    color: #fff;
+}
+
 /* footer */
 .h1, p{
     color: #fff;

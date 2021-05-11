@@ -32,7 +32,7 @@ img{
 }
 
 
-.navbar{
+.navbar, .details-navbar{
     /* background-color: #a85d98; */
     /* background-color: #c394f8; */
     /* background-color: #6a7fb6; */
@@ -168,19 +168,57 @@ img{
 
 }
 
+.bands{
+    background: linear-gradient(to right,#6a7fb6,#c394f8, #a85d98); 
+    position: relative;
+    padding-top: 50px;   
+
+}
+.bands h2{
+    color: #fff;
+}
 .bands .card:hover{
     transform: scale(1.2);
     cursor: pointer;
 }
 
-.bands a{
+.bands .btn{
+    color: #fff;
+    margin-left: 45%;
+    margin-bottom: 10px;
+}
+
+
+/* bands details */
+.details-navbar .flex{
+    justify-content: space-between;
+}
+
+.details-navbar .container a{
+    font-size: 20px;
     color: #fff;
 }
 
-/* footer */
-.h1, p{
-    color: #fff;
+.details-navbar .container a:hover{
+    border-bottom: 2px solid #fff;
 }
+
+.band-details{
+    background: linear-gradient(to right,#6a7fb6,#c394f8, #a85d98); 
+    position: relative;
+    padding-top: 50px;
+}
+.band-details .card h1, h2, p{
+    color: #333;
+}
+
+.band-details .card {
+    box-shadow: 10px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* footer */
+
 .footer{
     background-color: #1e0e32;
     padding: 3rem 0;

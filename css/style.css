@@ -184,7 +184,7 @@ img{
 
 .bands .btn{
     color: #fff;
-    margin-left: 45%;
+    margin-left: 40%;
     margin-bottom: 10px;
 }
 
@@ -238,7 +238,8 @@ img{
 @media (max-width: 768px) {
     .grid,
     .showcase .grid, 
-    .tabs .grid {
+    .tabs .grid,
+    .bands .grid {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
     }
@@ -255,6 +256,18 @@ img{
     .tabs{
         height: auto;
     }
+
+    .search-bar{
+        height: 110px;
+    }
+    .search-bar .flex{
+        flex-direction: row;
+    }
+    .search-bar input[type="search"]{
+        width: auto;
+    }
+
+    
 }
 
 @media (max-width: 500px) {

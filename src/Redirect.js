@@ -1,18 +1,27 @@
 import React from 'react'
-import {useLocation} from 'react-router-dom';
-import {getParamValues, setAuthHeader} from '../src/utils/functions';
-import axios from 'axios';
+import {useLocation, useHistory} from 'react-router-dom';
+import _ from 'lodash';
+import {getParamValues} from '../src/utils/functions';
 
 export default function Redirect() {
+    
     const loc = useLocation();
-    const access_token = getParamValues(loc.hash);
-    localStorage.setItem('params', JSON.stringify(access_token));
-    // console.log(loc)
+    const history = useHistory();
 
-    setAuthHeader();
-    axios.get('https://api.spotify.com/v1/tracks/0Og5nozzTRlBn1k2PgMOiK').then(res=>{
-        console.log(res.data.name)
-    })
+    try {
+        if (_.isEmpty(loc.hash)) {
+            return history.push('/home');
+          }
+        const access_token = getParamValues(loc.hash);
+        const expiryTime = new Date().getTime() + access_token.expires_in * 1000;
+        localStorage.setItem('params', JSON.stringify(access_token));
+        localStorage.setItem('expiry_time', expiryTime);
+        history.push('/home');
+    }catch(error){
+        history.push('/')
+    }
+    
+
     return (
         <div>
             <h1>Redirecting....</h1>

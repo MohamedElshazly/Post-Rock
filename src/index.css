@@ -31,6 +31,35 @@ img{
     width: 100%;
 }
 
+.land {
+    display: grid;
+    /* justify-content: center; */
+    /* gap: 30px; */
+    /* align-items: center; */
+    height:100vh;
+    background: linear-gradient(to right,#6a7fb6,#c394f8, #a85d98); 
+    /* transform: 'translate(-50%, -50%)'; */
+}
+.land .container{
+    /* justify-content: center; */
+    align-items: center;
+    overflow: hidden;
+}
+.land h1{
+    font-size: 3rem;
+    grid-column: 1 / span 2;
+    animation: slideInFromTop 1s ease-in;
+}
+
+.land button{
+    justify-self: center;
+    width: 200px;
+    height: 100px;
+    color: #fff;
+    background-color:#27b85c;
+    animation: slideInFromBottom 1s ease-in;
+}
+
 
 .navbar, .details-navbar{
     /* background-color: #a85d98; */
@@ -232,6 +261,47 @@ img{
 .footer nav a, h1{
     color: #fff;
 }
+
+/* Animations */
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+  
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateX(100%);
+    }
+  
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideInFromTop {
+    0% {
+      transform: translateY(-100%);
+    }
+  
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideInFromBottom {
+    0% {
+      transform: translateY(100%);
+    }
+  
+    100% {
+      transform: translateX(0);
+    }
+  }
 
 
 /* Tablets and under */

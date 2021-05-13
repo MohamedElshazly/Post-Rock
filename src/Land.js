@@ -15,9 +15,11 @@ export default function Land() {
     }
 
     return (
-        <div>
-            <h1>HOME</h1>
-            <button  type="submit" onClick={handleLogin}>Login to spotify</button>
+        <div className="land">
+            <div className="container grid">
+                <h1 className="logo">Welcome to Post-Rock</h1>
+            </div>
+            <button className="btn"  type="submit" onClick={handleLogin}><i className="fab fa-spotify fa-2x" /> Login to spotify</button>
         </div>
     )
 }

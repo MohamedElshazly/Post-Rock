@@ -4,18 +4,21 @@ import Redirect from './Redirect'
 import Home from './Home';
 import Bands from './Bands';
 import Details from './Details';
+import ProtectedRoute from './utils/ProtectedRoute'
 
 function App() {
+  const token = localStorage.getItem('params');
   
   return (
     <Router>
       <div className="App">
         <Switch>
           <Route exact path='/'><Land /></Route>
-          <Route  path='/home'><Home /></Route>
-          <Route path='/bands'><Bands /></Route>
-          <Route path='/band-details'><Details /></Route>
-          <Route path='/redirect'><Redirect /></Route>
+          {/* <ProtectedRoute  path='/home' token={token}><Home /></ProtectedRoute> */}
+          <ProtectedRoute  path='/home' token={token} component={Home}/>
+          <ProtectedRoute path='/bands' token={token} component={Bands}/>
+          <ProtectedRoute path='/band-details' token={token} component={Details}/>
+          <ProtectedRoute path='/redirect' token={token} component={Redirect} />
         </Switch>
       </div>
     </Router>

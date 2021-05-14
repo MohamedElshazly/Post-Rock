@@ -12,7 +12,7 @@ export default function ListBands() {
             <Link className="wrap" to="/band-details">
                 <div className="card"> 
                     <h4>Mono</h4>
-                    <img className="logo" src="images/mono.jpg" alt="" />
+                    <img className="logo" src="https://i.scdn.co/image/9ab3dc04b842a371968453579ce4a92a3f93752f" alt="" />
                 </div>
             </Link>
 

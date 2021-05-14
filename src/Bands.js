@@ -7,8 +7,8 @@ export default function Bands() {
     return (
         <div>
             <SearchBar />
-            <ListBands />
-            <Footer />
+            {/* <ListBands /> */}
+            {/* <Footer /> */}
             
         </div>
     )

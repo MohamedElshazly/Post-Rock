@@ -245,6 +245,21 @@ img{
     box-shadow: 10px 5px 20px rgba(0, 0, 0, 0.2);
 }
 
+.band-details .flex{
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+.band-details .flex .card{
+    text-align: center;
+    margin: 18px 10px 40px;
+    transition: transform 0.2s ease-in;
+}
+.band-details .flex .card:hover{
+    transform: translateY(-15px);
+}
+
+
+
 
 /* footer */
 

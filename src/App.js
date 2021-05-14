@@ -18,7 +18,7 @@ function App() {
           <ProtectedRoute  path='/home' token={token} component={Home}/>
           <ProtectedRoute path='/bands' token={token} component={Bands}/>
           <ProtectedRoute path='/band-details/:id' token={token} component={Details}/>
-          <Route path='/redirect' token={token} component={Redirect} />
+          <ProtectedRoute path='/redirect' token={token} component={Redirect} />
         </Switch>
       </div>
     </Router>

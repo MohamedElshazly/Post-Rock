@@ -60,6 +60,18 @@ img{
     animation: slideInFromBottom 1s ease-in;
 }
 
+.land a{
+    justify-self: center;
+    width: 170px;
+    height: 90px;
+    color: #fff;
+    animation: slideInFromBottom 1s ease-in;
+}
+
+.land .btn-outline{
+    border: 1px #333 solid;
+}
+
 
 .navbar, .details-navbar{
     /* background-color: #a85d98; */
@@ -257,7 +269,55 @@ img{
 .band-details .flex .card:hover{
     transform: translateY(-15px);
 }
+.album-details{
+    background: linear-gradient(to right,#6a7fb6,#c394f8, #a85d98); 
+    position: relative;
+    padding-top: 50px;
+}
+.album-details .card h1, h2, p{
+    color: #333;
+}
 
+.album-details .card {
+    box-shadow: 10px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.album-details .flex{
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+.album-details .flex .card{
+    text-align: center;
+    margin: 18px 10px 40px;
+    transition: transform 0.2s ease-in;
+}
+.album-details .flex .card:hover{
+    transform: translateY(-15px);
+}
+
+.album-details .back{
+    transition: transform 0.2 ease-in;
+}
+
+.album-details .back:hover{
+    transform: scale(1.2);
+    color: #1e0e32;
+    cursor: pointer;
+}
+
+.album-details .player{
+    background: linear-gradient(to right,#a85d98,#121212, #181818); 
+}
+
+.album-details .player h4{
+    color:#fff;
+    grid-column: 1 /span 2;
+}
+
+.album-details .btn {
+    width: 50%;
+    background-color: #27b85c;
+}
 
 
 

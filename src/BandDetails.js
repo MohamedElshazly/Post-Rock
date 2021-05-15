@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import SpotifyWebApi from "spotify-web-api-js";
+import { useParams, Link } from "react-router-dom";
+import useAuth from "./utils/useAuth";
 
 export default function BandDetails() {
   const { id } = useParams();
   const [albums, setAlbums] = useState("");
   const [artist, setArtist] = useState("");
 
-  const spotify = new SpotifyWebApi();
-  const params = JSON.parse(localStorage.getItem("params"));
-  spotify.setAccessToken(params.access_token);
+  const spotify = useAuth();
 
   useEffect(() => {
-    spotify.getArtistAlbums(id, {market:"AG"}).then((data) => {
+    spotify.getArtistAlbums(id).then((data) => {
       setAlbums(data);
     });
 
     spotify.getArtist(id).then((data) => {
       setArtist(data);
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log(albums);
+  // console.log(albums);
+
   return (
     <section className="band-details">
       <div className="container">
@@ -41,24 +41,36 @@ export default function BandDetails() {
             consequatur unde! Tempora non quos sed voluptate!
           </p>
 
-          <h2 className="py-2">Available on</h2>
+          <h2 className="md py-2">Available on</h2>
           <ul>
             {artist.external_urls ? (
-            <li><a href={artist.external_urls.spotify} target="_blank" rel="noreferrer" >Spotify</a></li>
+              <li className="lead">
+                <a
+                  href={artist.external_urls.spotify}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <b>
+                    <i className="fab fa-spotify fa-2x" />
+                    Spotify
+                  </b>
+                </a>
+              </li>
             ) : (
-            <h4>Loading...</h4>
-          )}
+              <h4>Loading...</h4>
+            )}
           </ul>
 
-           <h2 className="py-2">Albums</h2> 
+          <h2 className="py-2">Albums</h2>
           <div className="container flex">
             {albums &&
               albums.items.map((album) => (
-                <a href={album.external_urls.spotify} target="_blank" rel="noreferrer" key ={album.id}><div className="card" key={album.id}>
-                  {/* <h4 className="hide">{album.name}</h4> */}
-                  <img src={album.images[1].url} alt="" />
-                </div>
-                </a>
+                <Link to={`/album-details/${id}/${album.id}`} key={album.id}>
+                  <div className="card" key={album.id}>
+                    {/* <h4 className="hide">{album.name}</h4> */}
+                    <img src={album.images[1].url} alt="" />
+                  </div>
+                </Link>
               ))}
           </div>
         </div>

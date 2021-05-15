@@ -1,20 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-// import { get } from './utils/api';
-import SpotifyWebApi from 'spotify-web-api-js';
 import Footer from "./Footer";
-// import ListBands from "./ListBands";
 import SearchResult from "./SearchResult";
+import  useAuth  from './utils/useAuth'; 
+
 
 export default function SearchBar() {
 
   const [searchTerm, setSearchTerm] = useState(""); 
   const [postRockBands, setPostRockBands] = useState(""); 
   
-  const spotify = new SpotifyWebApi();
-  const params = JSON.parse(localStorage.getItem('params'));
-  spotify.setAccessToken(params.access_token);
-
+  const spotify = useAuth();
+  
   const handleChange = (e) =>{
     e.preventDefault();
     setSearchTerm(e.target.value);

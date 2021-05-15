@@ -18,6 +18,7 @@ export default function Redirect() {
         localStorage.setItem('expiry_time', expiryTime);
         history.push('/home');
     }catch(error){
+        console.log(error)
         history.push('/')
     }
     

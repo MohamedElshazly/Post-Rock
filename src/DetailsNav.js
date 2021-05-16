@@ -8,7 +8,7 @@ export default function DetailsNav() {
            <h4><Link to="/bands">Back to Bands!</Link></h4>
             <nav>
                 <ul>
-                    <li><Link to="home">Home</Link></li>
+                    <li><Link to="/home">Home</Link></li>
                 </ul>
             </nav>
         </div>

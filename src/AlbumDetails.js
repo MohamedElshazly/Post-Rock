@@ -64,10 +64,10 @@ export default function AlbumDetails() {
           <h2 className="py-2">Tracks</h2>
           {tracks &&
             tracks.items.map((track) => (
-              <div className="card player grid" key={track.id}>
+              <div className="card player grid-3" key={track.id}>
                 <h4 className="md">{track.name}</h4>
                 {/* <img src={album.images[1].url} alt="" /> */}
-                <ReactAudioPlayer src={track.preview_url} controls />
+                <ReactAudioPlayer src={track.preview_url} autoplay='true' controls />
                 <a
                   href={track.external_urls.spotify}
                   className="btn"
